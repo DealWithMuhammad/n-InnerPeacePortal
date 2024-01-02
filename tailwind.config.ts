@@ -6,11 +6,12 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  
   theme: {
     extend: {
       fontFamily: {
-        body: ["var(--font-nunito-sans"],
-        display: ["var(--font-nunito"],
+        body: ["var(--font-nunito-sans)"],
+        display: ["var(--font-nunito)"],
         }
     },
   },
