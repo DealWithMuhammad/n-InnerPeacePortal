@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito, Nunito_Sans } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
+import { createClient } from "@/prismicio";
 
 const nunito = Nunito({
   subsets: ["latin"],
