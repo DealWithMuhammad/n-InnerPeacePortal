@@ -22,15 +22,17 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Nostrud ut nisi est cillum. Mollit ut irure pariatur consectetur eu sint nostrud labore ea pariatur dolor mollit sit. Excepteur cillum ut mollit."
-						}
+							"text": "Unleash your potential by harmonizing your daily tasks and habits with your unique energy rhythms.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
 			"button_text": {
 				"__TYPE__": "FieldContent",
-				"value": "peace",
-				"type": "Text"
+				"type": "Text",
+				"value": "Try it for free"
 			},
 			"button_link": {
 				"__TYPE__": "LinkContent",

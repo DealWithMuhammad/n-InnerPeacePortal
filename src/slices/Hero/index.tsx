@@ -1,8 +1,30 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+  JSXMapSerializer,
+  PrismicRichText,
+  SliceComponentProps,
+} from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
+import Heaading from "@/components/Heading";
+
+const components: JSXMapSerializer = {
+  heading1: ({ children }) => (
+    <Heaading
+      as="h1"
+      size="xl"
+      className="mb-4 md:mb-8 mt-12 first:mt-0 last:mb-0"
+    >
+      {children}
+    </Heaading>
+  ),
+  paragraph: ({ children }) => (
+    <p className="text-2xl text-center text-slate-600 mb-4 md:mb-8 max-w-md font-normal leading-10 font-body">
+      {children}
+    </p>
+  ),
+};
 
 /**
  * Props for `Hero`.
@@ -24,25 +46,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <div className="grid grid-cols-1 place-items-center text-center">
         <PrismicRichText
           field={slice.primary.heading}
-          components={{
-            heading1: ({ children }) => (
-              <h1 className="text-5xl  md:text-7xl font-bold leading-tight tracking-tighter font-display text-slate-700">
-                {children}
-              </h1>
-            ),
-          }}
+          components={components}
         />
 
-        <PrismicRichText
-          field={slice.primary.body}
-          components={{
-            paragraph: ({ children }) => (
-              <p className="text-2xl text-center text-slate-600 mb-4 md:mb-8 max-w-md font-normal leading-10 font-body">
-                {children}
-              </p>
-            ),
-          }}
-        />
+        <PrismicRichText field={slice.primary.body} components={components} />
 
         {/* Classic way to add Button:
          <PrismicNextLink
