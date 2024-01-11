@@ -42,7 +42,6 @@
 				}
 			},
 			"image": {
-				"__TYPE__": "ImageContent",
 				"url": "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxmcnVpdHxlbnwwfHx8fDE3MDQ5NDA0Nzl8MA&ixlib=rb-4.0.3&q=85&rect=36%2C50%2C7102%2C9942&w=7173&h=10041",
 				"alt": "red strawberry fruit with white background",
 				"origin": {
@@ -61,9 +60,84 @@
 						"y": 50
 					}
 				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "horizantal",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Features for finding focus",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Harness our innovative feature set to propel your productivity power. Make every moment count, stress less.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+					"width": 4480,
+					"height": 4480
+				},
+				"url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+				"width": 4480,
+				"height": 4480,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Try for free"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]
