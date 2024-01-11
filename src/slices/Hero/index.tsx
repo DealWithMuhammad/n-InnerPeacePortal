@@ -7,17 +7,17 @@ import {
 } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
-import Heaading from "@/components/Heading";
+import Heading from "@/components/Heading";
 
 const components: JSXMapSerializer = {
   heading1: ({ children }) => (
-    <Heaading
+    <Heading
       as="h1"
       size="xl"
       className="mb-4 md:mb-8 mt-12 first:mt-0 last:mb-0"
     >
       {children}
-    </Heaading>
+    </Heading>
   ),
   paragraph: ({ children }) => (
     <p className="text-2xl text-slate-600 mb-4 md:mb-8 max-w-md font-normal leading-10 font-body">
