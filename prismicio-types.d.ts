@@ -170,6 +170,24 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
+interface TestimonialDocumentData {}
+
+/**
+ * Testimonial document from Prismic
+ *
+ * - **API ID**: `testimonial`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TestimonialDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TestimonialDocumentData>,
+    "testimonial",
+    Lang
+  >;
+
 type TestingDocumentDataSlicesSlice = never;
 
 /**
@@ -238,6 +256,7 @@ export type TestingDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | HomepageDocument
   | SettingsDocument
+  | TestimonialDocument
   | TestingDocument;
 
 /**
@@ -486,6 +505,8 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
+      TestimonialDocument,
+      TestimonialDocumentData,
       TestingDocument,
       TestingDocumentData,
       TestingDocumentDataSlicesSlice,
