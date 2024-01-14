@@ -4,76 +4,6 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type FeaturesDocumentDataSlicesSlice =
-  | CallToActionSlice
-  | TextWithImageSlice
-  | TestimonialsSlice
-  | FeaturesSlice
-  | HeroSlice;
-
-/**
- * Content for Features documents
- */
-interface FeaturesDocumentData {
-  /**
-   * Slice Zone field in *Features*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: features.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<FeaturesDocumentDataSlicesSlice> /**
-   * Meta Description field in *Features*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: features.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Features*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: features.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Features*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: features.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
-}
-
-/**
- * Features document from Prismic
- *
- * - **API ID**: `features`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type FeaturesDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<FeaturesDocumentData>,
-    "features",
-    Lang
-  >;
-
 type HomepageDocumentDataSlicesSlice =
   | CallToActionSlice
   | TextWithImageSlice
@@ -376,78 +306,11 @@ export type TestimonialDocument<Lang extends string = string> =
     Lang
   >;
 
-type TestingDocumentDataSlicesSlice = never;
-
-/**
- * Content for Testing documents
- */
-interface TestingDocumentData {
-  /**
-   * Slice Zone field in *Testing*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testing.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<TestingDocumentDataSlicesSlice> /**
-   * Meta Description field in *Testing*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: testing.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Testing*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: testing.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Testing*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: testing.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
-}
-
-/**
- * Testing document from Prismic
- *
- * - **API ID**: `testing`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type TestingDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<TestingDocumentData>,
-    "testing",
-    Lang
-  >;
-
 export type AllDocumentTypes =
-  | FeaturesDocument
   | HomepageDocument
   | PageDocument
   | SettingsDocument
-  | TestimonialDocument
-  | TestingDocument;
+  | TestimonialDocument;
 
 /**
  * Primary content in *CallToAction → Primary*
@@ -939,9 +802,6 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      FeaturesDocument,
-      FeaturesDocumentData,
-      FeaturesDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
@@ -953,9 +813,6 @@ declare module "@prismicio/client" {
       SettingsDocumentDataNavigationItem,
       TestimonialDocument,
       TestimonialDocumentData,
-      TestingDocument,
-      TestingDocumentData,
-      TestingDocumentDataSlicesSlice,
       AllDocumentTypes,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
